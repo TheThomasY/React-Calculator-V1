@@ -1,0 +1,53 @@
+.calc-card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+button {
+  height: 60px;
+  font-size: 2rem;
+  color: #333;
+  background-color: #fff;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #c4c4c4;
+}
+
+button:hover {
+  background-color: #d6d6d6;
+}
+
+.operator {
+  color: #2e86c0;
+}
+
+.all-clear {
+  background-color: #f0595f;
+  border-color: #b0353a;
+  color: #fff;
+}
+
+.all-clear:hover {
+  background-color: #f17377;
+}
+
+.equal-sign {
+  height: 100%;
+  background-color: #2e86c0;
+  border-color: #337cac;
+  color: #fff;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 4 / 6 / 5;
+}
+
+.equal-sign:hover {
+  background-color: #4e9ed4;
+}
+/*# sourceMappingURL=CalcButton.css.map */

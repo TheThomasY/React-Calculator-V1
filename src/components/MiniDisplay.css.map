@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,kBAAkB,CAAC;EACjB,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,GAAG,CAAC,KAAK,CAAC,OAAe;EACjC,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,KAAK;EACjB,aAAa,EAAE,IAAI;EACnB,YAAY,EAAE,IAAI;CACnB",
+    "sources": [
+        "MiniDisplay.scss"
+    ],
+    "names": [],
+    "file": "MiniDisplay.css"
+}
