@@ -1,4 +1,4 @@
-import "./CalcButton.css";
+import "./CalcButtons.css";
 import React from "react";
 
 const CalcButton = (props) => {

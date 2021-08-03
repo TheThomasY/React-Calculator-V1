@@ -3,15 +3,14 @@ import React, { useState } from "react";
 import "./Display.css";
 
 const Display = (props) => {
-  const currentCalc = props.currentCalc;
+  let displayThis = props.currentCalc.firstNumber;
+
+  if (props.currentCalc.result !== "") {
+    displayThis = props.currentCalc.result;
+  }
 
   return (
-    <input
-      type="text"
-      className="calc-display"
-      value={currentCalc.firstNumber}
-      disabled
-    />
+    <input type="text" className="calc-display" value={displayThis} disabled />
   );
 };
 

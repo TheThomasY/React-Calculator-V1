@@ -1,6 +1,6 @@
 import Display from "./components/Display";
 import MiniDisplay from "./components/MiniDisplay";
-import CalcButton from "./components/CalcButton";
+import CalcButtons from "./components/CalcButtons";
 import React, { useState } from "react";
 
 import "./App.css";
@@ -10,6 +10,8 @@ function App() {
     firstNumber: "0",
     operator: "",
     secondNumber: "",
+    result: "",
+    prevResult: "",
   });
 
   const numberPressedHandler = (buttonValue) => {
@@ -25,6 +27,8 @@ function App() {
         firstNumber: "0",
         operator: "",
         secondNumber: "",
+        result: "",
+        prevResult: "",
       });
     } else if (
       currentCalc.firstNumber === "0" &&
@@ -44,6 +48,7 @@ function App() {
   const operatorPressedHandler = (operator) => {
     setCurrentCalc((prevCalc) => {
       return {
+        ...prevCalc,
         firstNumber: "",
         operator: operator,
         secondNumber: prevCalc.firstNumber,
@@ -55,31 +60,48 @@ function App() {
     setCurrentCalc((prevCalc) => {
       const number1 = parseFloat(prevCalc.firstNumber);
       const number2 = parseFloat(prevCalc.secondNumber);
-      let result = 0;
+      let calc = 0;
+      let oldResult = "";
 
-      switch (prevCalc.operator) {
-        case "+":
-          result = number2 + number1;
-          break;
-        case "-":
-          result = number2 - number1;
-          break;
-        case "x":
-          result = number2 * number1;
-          break;
-        case "/":
-          result = number2 / number1;
-          break;
+      if (prevCalc.result === "") {
+        switch (prevCalc.operator) {
+          case "+":
+            calc = number2 + number1;
+            break;
+          case "-":
+            calc = number2 - number1;
+            break;
+          case "x":
+            calc = number2 * number1;
+            break;
+          case "/":
+            calc = number2 / number1;
+            break;
+        }
+      } else {
+        oldResult = parseFloat(prevCalc.result);
+        console.log("oldResult:", oldResult);
+
+        switch (prevCalc.operator) {
+          case "+":
+            calc = oldResult + number1;
+            break;
+          case "-":
+            calc = oldResult - number1;
+            break;
+          case "x":
+            calc = oldResult * number1;
+            break;
+          case "/":
+            calc = oldResult / number1;
+            break;
+        }
       }
 
-      result = result.toString();
-      if (result.length > 12) result = result.slice(0, 12);
+      calc = calc.toString();
+      if (calc.length > 12) calc = calc.slice(0, 12);
 
-      return {
-        firstNumber: result,
-        operator: prevCalc.operator,
-        secondNumber: prevCalc.secondNumber,
-      };
+      return { ...prevCalc, result: calc, prevResult: oldResult.toString() };
     });
   };
 
@@ -87,7 +109,7 @@ function App() {
     <div className="calc">
       <Display currentCalc={currentCalc} />
       <MiniDisplay currentCalc={currentCalc} />
-      <CalcButton
+      <CalcButtons
         onNumberPressed={numberPressedHandler}
         onOperatorPressed={operatorPressedHandler}
         onEnterPressed={enterPressedHandler}
