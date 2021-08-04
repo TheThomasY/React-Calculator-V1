@@ -1,5 +1,7 @@
 // Colours ---------------
-$text: #333;
+$button-dark: #282932;
+$button-hover: #525355;
+$button-highlight: #30ac6d;
 $AC-bg: #fcd609;
 $AC-hover: #ffeb7b;
 $operator-color: #fa9427;
@@ -8,50 +10,33 @@ $operator-hover: #ffc180;
 .calc-card {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
+  grid-gap: 8px;
+  padding: 15px;
 }
 
 // Generic Button Styling
 button {
   height: 60px;
   font-size: 2.5rem;
-  color: #333;
-  background-color: #fff;
-  background-color: transparent;
+  color: white;
+  background-color: $button-dark;
   border-radius: 10px;
-  border: 1px solid #c4c4c4;
+  // border: 1px solid #c4c4c4;
+  border: none;
 }
 
 button:hover {
-  background-color: #d6d6d6;
+  background-color: $button-hover;
 }
 
 .operator {
-  color: black;
-  background-color: $operator-color;
-}
-
-.operator:hover {
-  background-color: $operator-hover;
+  color: $button-highlight;
 }
 
 // Specific button styling
-.all-clear {
-  background-color: $AC-bg;
-}
-
-.all-clear:hover {
-  background-color: $AC-hover;
-}
-
 .equal-sign {
   height: 100%;
-  background-color: $AC-bg;
+  color: $button-highlight;
   border-color: #c4c4c4;
   grid-area: 2 / 4 / 6 / 5;
-}
-
-.equal-sign:hover {
-  background-color: $AC-hover;
 }
