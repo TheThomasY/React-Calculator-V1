@@ -47,11 +47,18 @@ function App() {
 
   const operatorPressedHandler = (operator) => {
     setCurrentCalc((prevCalc) => {
+      let prevResult = "";
+
+      if (prevCalc.result !== "") {
+        prevResult = prevCalc.result;
+      }
+
       return {
         ...prevCalc,
         firstNumber: "",
         operator: operator,
         secondNumber: prevCalc.firstNumber,
+        prevResult: prevResult,
       };
     });
   };
@@ -99,7 +106,7 @@ function App() {
       }
 
       calc = calc.toString();
-      if (calc.length > 12) calc = calc.slice(0, 12);
+      if (calc.length > 10) calc = calc.slice(0, 10);
 
       return { ...prevCalc, result: calc, prevResult: oldResult.toString() };
     });
@@ -107,8 +114,8 @@ function App() {
 
   return (
     <div className="calc">
-      <Display currentCalc={currentCalc} />
       <MiniDisplay currentCalc={currentCalc} />
+      <Display currentCalc={currentCalc} />
       <CalcButtons
         onNumberPressed={numberPressedHandler}
         onOperatorPressed={operatorPressedHandler}

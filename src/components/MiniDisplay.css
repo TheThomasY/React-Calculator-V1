@@ -1,12 +1,13 @@
 .calc-mini-display {
   width: 100%;
   font-size: 1.6rem;
-  height: 20px;
-  border: 1px solid #5a5a5a;
-  background-color: #252525;
-  color: #fff;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  color: #333;
   text-align: right;
-  padding-right: 20px;
+  padding-right: 25px;
   padding-left: 10px;
+  padding-top: 10px;
 }
 /*# sourceMappingURL=MiniDisplay.css.map */

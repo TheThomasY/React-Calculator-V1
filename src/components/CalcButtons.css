@@ -9,11 +9,11 @@
 
 button {
   height: 60px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #333;
   background-color: #fff;
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #c4c4c4;
 }
 
@@ -22,24 +22,26 @@ button:hover {
 }
 
 .operator {
-  color: #2e86c0;
+  color: black;
+  background-color: #fa9427;
+}
+
+.operator:hover {
+  background-color: #ffc180;
 }
 
 .all-clear {
-  background-color: #f0595f;
-  border-color: #b0353a;
-  color: #fff;
+  background-color: #fcd609;
 }
 
 .all-clear:hover {
-  background-color: #f17377;
+  background-color: #ffeb7b;
 }
 
 .equal-sign {
   height: 100%;
-  background-color: #2e86c0;
-  border-color: #337cac;
-  color: #fff;
+  background-color: #fcd609;
+  border-color: #c4c4c4;
   -ms-grid-row: 2;
   -ms-grid-row-span: 4;
   -ms-grid-column: 4;
@@ -48,6 +50,6 @@ button:hover {
 }
 
 .equal-sign:hover {
-  background-color: #4e9ed4;
+  background-color: #ffeb7b;
 }
-/*# sourceMappingURL=CalcButton.css.map */
+/*# sourceMappingURL=CalcButtons.css.map */
