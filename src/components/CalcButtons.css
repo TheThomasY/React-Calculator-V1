@@ -3,53 +3,35 @@
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
+  grid-gap: 8px;
+  padding: 15px;
 }
 
 button {
   height: 60px;
   font-size: 2.5rem;
-  color: #333;
-  background-color: #fff;
-  background-color: transparent;
+  color: white;
+  background-color: #282932;
   border-radius: 10px;
-  border: 1px solid #c4c4c4;
+  border: none;
 }
 
 button:hover {
-  background-color: #d6d6d6;
+  background-color: #525355;
 }
 
 .operator {
-  color: black;
-  background-color: #fa9427;
-}
-
-.operator:hover {
-  background-color: #ffc180;
-}
-
-.all-clear {
-  background-color: #fcd609;
-}
-
-.all-clear:hover {
-  background-color: #ffeb7b;
+  color: #30ac6d;
 }
 
 .equal-sign {
   height: 100%;
-  background-color: #fcd609;
+  color: #30ac6d;
   border-color: #c4c4c4;
   -ms-grid-row: 2;
   -ms-grid-row-span: 4;
   -ms-grid-column: 4;
   -ms-grid-column-span: 1;
   grid-area: 2 / 4 / 6 / 5;
-}
-
-.equal-sign:hover {
-  background-color: #ffeb7b;
 }
 /*# sourceMappingURL=CalcButtons.css.map */

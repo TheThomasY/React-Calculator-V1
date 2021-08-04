@@ -2,6 +2,7 @@ html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #303238;
 }
 
 *,
@@ -14,7 +15,8 @@ html {
 }
 
 .calc {
-  border: 1px solid #ccc;
+  background-color: #1d2129;
+  border: 1px solid transparent;
   border-radius: 10px;
   position: absolute;
   top: 50%;

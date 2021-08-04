@@ -1,6 +1,11 @@
+$calc-bg: #1d2129;
+$main-bg: #303238;
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  background-color: $main-bg;
+  // background: linear-gradient(black, white);
 }
 
 *,
@@ -12,7 +17,8 @@ html {
 }
 
 .calc {
-  border: 1px solid #ccc;
+  background-color: $calc-bg;
+  border: 1px solid transparent;
   border-radius: 10px;
   position: absolute;
   top: 50%;
