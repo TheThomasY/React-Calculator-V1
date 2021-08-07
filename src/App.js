@@ -15,6 +15,7 @@ function App() {
   });
 
   const numberPressedHandler = (buttonValue) => {
+    // First two if statements prevent nonsensical inputs
     if (buttonValue === "." && currentCalc.firstNumber.includes(".")) {
       buttonValue = "";
     }
@@ -65,50 +66,36 @@ function App() {
 
   const enterPressedHandler = () => {
     setCurrentCalc((prevCalc) => {
+      if (prevCalc.firstNumber === "0") return { ...prevCalc };
+
       const number1 = parseFloat(prevCalc.firstNumber);
-      const number2 = parseFloat(prevCalc.secondNumber);
+      let number2 = parseFloat(prevCalc.secondNumber);
       let calc = 0;
-      let oldResult = "";
 
-      if (prevCalc.result === "") {
-        switch (prevCalc.operator) {
-          case "+":
-            calc = number2 + number1;
-            break;
-          case "-":
-            calc = number2 - number1;
-            break;
-          case "x":
-            calc = number2 * number1;
-            break;
-          case "/":
-            calc = number2 / number1;
-            break;
-        }
-      } else {
-        oldResult = parseFloat(prevCalc.result);
-        console.log("oldResult:", oldResult);
+      if (prevCalc.result !== "") {
+        // If there is already a result, use that in the calculation
+        number2 = parseFloat(prevCalc.result);
+      }
 
-        switch (prevCalc.operator) {
-          case "+":
-            calc = oldResult + number1;
-            break;
-          case "-":
-            calc = oldResult - number1;
-            break;
-          case "x":
-            calc = oldResult * number1;
-            break;
-          case "/":
-            calc = oldResult / number1;
-            break;
-        }
+      switch (prevCalc.operator) {
+        case "+":
+          calc = number2 + number1;
+          break;
+        case "-":
+          calc = number2 - number1;
+          break;
+        case "x":
+          calc = number2 * number1;
+          break;
+        case "/":
+          calc = number2 / number1;
+          break;
       }
 
       calc = calc.toString();
       if (calc.length > 10) calc = calc.slice(0, 10);
 
-      return { ...prevCalc, result: calc, prevResult: oldResult.toString() };
+      return { ...prevCalc, result: calc, prevResult: prevCalc.result };
     });
   };
 
